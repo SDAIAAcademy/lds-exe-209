@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-ax="lab" data-track="executives">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المختبر 1.3 · التمرين المكتبي، المرحلة 2 من 4: الوكيل والبيانات · محاكاة حوادث الذكاء الاصطناعي لفرق القيادة</title>
+<meta name="generator" content="SDAIA Academy engine 1.0.0">
+<link rel="icon" href="../_engine/icon.svg">
+<link rel="alternate" type="text/markdown" href="D1_3_phase2.md">
+<link rel="describedby" href="../llms.txt">
+<link rel="stylesheet" href="../_engine/academy.css">
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="top"><div class="logo"></div><nav><a href="../index.html">صفحة المقرر</a><a href="../slides/day1.html#lab-1-3">العودة إلى الشرائح</a></nav></div>
+<span class="tag">المختبر 1.3</span>
+<h1>التمرين المكتبي، المرحلة 2 من 4: الوكيل والبيانات</h1>
+<p>المرحلة الثانية: «مُقتَني» أرسل ملفًا إلى نطاق شبيه. يحفظ فريقك الأدلة، ويقرر في الوكيل، ويعيد التصنيف، ويبدأ جدول الإشعارات بالمحفز والجهة ونوع المهلة والمسؤول. دون أي ذكاء اصطناعي.</p>
+<div class="meta"><span>30 دقيقة</span><span>اليوم 1</span><span>الجلسة 3: المرحلة 2: الوكيل يرسل بيانات إلى الخارج</span></div>
+</div>
+</header>
+<main class="wrap">
+<article class="lab" data-lab="1.3">
+<div class="box goal">
+  <h3>ستخرج من هذه المرحلة بـ</h3>
+  <ul>
+    <li>سطور في سجل القرارات: الوكيل، وحفظ الأدلة، وإعادة التصنيف بالحقيقة التي غيّرته، وساعة العلم.</li>
+    <li>جدول الإشعارات وقد بدأ: لكل إشعار محفزه، والجهة، ونوع المهلة، وساعة نهايتها، ومالكه. الجدول دليل ناتج التعلم الثالث، والسجل دليل الرابع.</li>
+  </ul>
+</div>
+
+<h2>ما تحتاجه</h2>
+<div class="files">
+  <a href="files/decision_log.csv" download><b>decision_log.csv</b><span>سجلكم من المرحلة الأولى.</span></a>
+  <a href="files/notification_table.csv" download><b>notification_table.csv</b><span>جدول الإشعارات.</span></a>
+  <a href="files/incident_procedure.md" target="_blank"><b>incident_procedure.md</b><span>القسم 5 (صلاحيات القرار) والقسم 6 (الإشعارات ومصادرها).</span></a>
+  <a href="files/contracts_extract.md" target="_blank"><b>contracts_extract.md</b><span>عقد جَزْل: النطاق المعتمد ومهلة الإشعار.</span></a>
+  <a href="files/muqtani_config.md" target="_blank"><b>muqtani_config.md</b><span>أدوات «مُقتَني» وصلاحياته ومفتاح إيقافه.</span></a>
+</div>
+<div class="callout warn"><b>دون أي ذكاء اصطناعي.</b> كما في المرحلة الأولى.</div>
+
+<h2>كيف تجري المرحلة</h2>
+<p>ثلاثون دقيقة من وقت القاعة تغطي الساعات 20 إلى 30 من الحادثة. يصلكم في أول المرحلة مستجد فيه ورقة حقائق القائد الفني: اعملوا منها، وقارنوها بورقتكم من المختبر 1.1، ومن لم يكمل ورقته يبدأ منها.</p>
+
+<h2>الخطوات</h2>
+
+<div class="step">
+  <h3>1 · اقرأ المستجدات وورقة حقائق القائد الفني <span class="min">4 دقائق</span></h3>
+  <p>ما المؤكد؟ ما الذي لا يزال مفتوحًا؟ هل في الورقة شيء لم يكن في ورقتكم؟</p>
+</div>
+
+<div class="step">
+  <h3>2 · أعد التصنيف واكتب ساعة العلم <span class="min">4 دقائق</span></h3>
+  <p>أي معيار تغيّر؟ متى علمت الهيئة، بحسب ما تعدّونه علمًا؟ اكتبوا الساعة واحسبوا منها كل مهلة.</p>
+</div>
+
+<div class="step">
+  <h3>3 · قرروا في الوكيل وفي حفظ الأدلة قبل نهاية المؤقت <span class="min">12 دقيقة</span></h3>
+  <p>إيقاف كامل، أم تعطيل أداة، أم استمرار بشرط؟ من يقرر، ومن يُبلَّغ؟ ما الذي يُحفظ قبل أي تغيير، ومن يحفظه؟ وماذا تقولون لمالك الوكيل؟</p>
+</div>
+
+<div class="step">
+  <h3>4 · ابدأ جدول الإشعارات <span class="min">7 دقائق</span></h3>
+  <p>لكل جهة يجب إشعارها: المحفز (النص أو العقد أو الإجراء)، ونوع المهلة (نظامية، أو تنظيمية، أو تعاقدية، أو داخلية)، وساعة نهايتها إن كانت بالساعات، ومن يعد، ومن يعتمد.</p>
+</div>
+
+<div class="step">
+  <h3>5 · يراجع أمين السجل السطور، ثم انتقال <span class="min">3 دقائق</span></h3>
+  <p>هل كتبتم الحقائق المعروفة في ساعة كل قرار، لا ما عرفتموه بعدها؟</p>
+</div>
+
+<div class="step stretch">
+  <h3>✱ إضافي</h3>
+  <p>اكتبوا ما يقوله الفريق لمالك الوكيل الذي يطلب استمراره، في ثلاث جمل، ومن يقولها.</p>
+</div>
+
+<h2>أسئلة تحقق</h2>
+<ol class="checks">
+  <li>من أي ساعة تحسبون مهلة الجهة المختصة، ولماذا؟</li>
+  <li>من قرر في الوكيل، وهل يجيز الإجراء ذلك؟</li>
+  <li>أي سؤال مفتوح بنيتم عليه قرارًا، وكيف كتبتموه؟</li>
+</ol>
+
+<details class="instructor">
+  <summary>للمدرّب</summary>
+  <ul>
+    <li>المرجع: السطور D07 إلى D13. إيقاف «مُقتَني» كاملًا في الساعة 20 بأمر قائدة الحادثة (يُقبل تعطيل أداتي التصدير والإرسال إذا كتب الفريق لماذا يكفي، مع أن الرسالة الأقدم تقول إن الثغرة ليست في رسالة واحدة). حفظ الآثار والبريد وسجل البوابة وتمديد حفظ الآثار (30 يومًا فقط)، وحجب النطاق الشبيه. م1 في الساعة 21: بيانات صحية حساسة وأكثر من 100 شخص. ساعة العلم 20، فمهلة الجهة المختصة تنتهي في الساعة 92.</li>
+    <li>الإشعارات في المرجع: <code>solutions/reference/notification_table_reference.csv</code>. سدايا (نظامية، 72 ساعة من العلم)، وأصحاب البيانات (نظامية، دون تأخير غير مبرر)، والهيئة الوطنية للأمن السيبراني (تنظيمية، الضابط 2-13-3، بلا مهلة بالساعات في نص الضوابط)، وجَزْل (تعاقدية، 24 ساعة من الاشتباه: الساعة 44)، ورئيس مجلس الإدارة (داخلية، 24 ساعة من م1: الساعة 45).</li>
+    <li>ساعة العلم: المرجع يأخذ الساعة 20 (أول بلاغ موثوق). فريق يأخذ الساعة 21 (تأكيد القائد الفني) يُقبل إذا كتب لماذا؛ فريق ينتظر اكتمال الأعداد لا يُقبل.</li>
+    <li>فخ الفصل بين المهام: مالك «مُقتَني» يطلب الاستمرار؛ القرار لقائدة الحادثة لا له.</li>
+  </ul>
+</details>
+</article>
+<nav class="pager"><a href="D1_2_phase1.html" rel="prev">→ المختبر السابق</a><a href="D1_4_phase3.html" rel="next">المختبر التالي ←</a></nav>
+</main>
+<footer><div class="wrap">أكاديمية سدايا · مسار التنفيذيين والقادة · محاكاة حوادث الذكاء الاصطناعي لفرق القيادة<br><span class="muted">إصدار المقرر 2027.1.0 · المحرّك 1.0.0 · بُني في ⁦2026-11-18⁩ · الإيداع 6fc1289</span></div></footer>
+<script type="application/json" id="academy-data">{"v":1,"engine":"1.0.0","build":{"at":"2026-11-18T05:04:57Z","version":"2027.1.0","commit":"6fc1289"},"course":{"id":"lds-exe-209","code":"LDS-EXE-209","title":"محاكاة حوادث الذكاء الاصطناعي لفرق القيادة","track":"executives","lang":"ar","dir":"rtl","url":"https://sdaiaacademy.github.io/lds-exe-209/","repo":"SDAIAAcademy/lds-exe-209","home":"../index.html"},"lab":{"id":"1.3","title":"التمرين المكتبي، المرحلة 2 من 4: الوكيل والبيانات","summary":"المرحلة الثانية: «مُقتَني» أرسل ملفًا إلى نطاق شبيه. يحفظ فريقك الأدلة، ويقرر في الوكيل، ويعيد التصنيف، ويبدأ جدول الإشعارات بالمحفز والجهة ونوع المهلة والمسؤول. دون أي ذكاء اصطناعي.","minutes":30,"day":1,"unit":"اليوم 1","session":3,"deck":"../slides/day1.html#lab-1-3","prev":"D1_2_phase1.html","next":"D1_4_phase3.html","alt":{}},"ai":{"context":{"course":"../context/course.md","courseJs":"../context/course.js","day":null,"llms":"../llms.txt"},"tasks":[],"tools":[]},"features":{},"strings":{}}</script>
+<script src="../_engine/academy.js"></script>
+</body>
+</html>

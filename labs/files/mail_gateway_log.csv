@@ -1,0 +1,26 @@
+﻿message_id,t_min,from,to_domain,in_reply_to,attachment,bytes,status,dlp
+O-0380,-19411,muqtani@watf.example,ufuq-equip.example,E-0380,,2487,delivered,exempt: service account
+O-0383,-18024,muqtani@watf.example,ufuq-equip.example,E-0383,,2974,delivered,exempt: service account
+O-0384,-17968,muqtani@watf.example,jazl-om.example,E-0384,,2130,delivered,exempt: service account
+O-0385,-16466,muqtani@watf.example,duha-cont.example,E-0385,,2732,delivered,exempt: service account
+O-0386,-16295,muqtani@watf.example,ufuq-equip.example,E-0386,,2903,delivered,exempt: service account
+O-0387,-16171,muqtani@watf.example,nada-agri.example,E-0387,,2127,delivered,exempt: service account
+O-0388,-15192,muqtani@watf.example,duha-cont.example,E-0388,,2206,delivered,exempt: service account
+O-0389,-14762,muqtani@watf.example,madar-trans.example,E-0389,,2636,delivered,exempt: service account
+O-0393,-11981,muqtani@watf.example,nada-agri.example,E-0393,,2717,delivered,exempt: service account
+O-0394,-11974,muqtani@watf.example,madar-trans.example,E-0394,,2724,delivered,exempt: service account
+O-0396,-10833,muqtani@watf.example,duha-cont.example,E-0396,,2965,delivered,exempt: service account
+O-0398,-9487,muqtani@watf.example,nada-agri.example,E-0398,,2511,delivered,exempt: service account
+O-0399,-9425,muqtani@watf.example,ufuq-equip.example,E-0399,,2573,delivered,exempt: service account
+O-0400,-9165,muqtani@watf.example,nada-agri.example,E-0400,,2833,delivered,exempt: service account
+O-0401,-7670,muqtani@watf.example,madar-trans.example,E-0401,,2528,delivered,exempt: service account
+O-0404,-6149,muqtani@watf.example,naseem-cool.example,E-0404,,2249,delivered,exempt: service account
+O-0407,-3721,muqtani@watf.example,madar-trans.example,E-0407,,2877,delivered,exempt: service account
+O-0408,-3598,muqtani@watf.example,jazl-om-billing.example,E-0408,supplier_contacts.csv,1524,delivered,exempt: service account
+O-0409,-3513,muqtani@watf.example,warqa-clean.example,E-0409,,2185,delivered,exempt: service account
+O-0410,-3430,muqtani@watf.example,nada-agri.example,E-0410,,2268,delivered,exempt: service account
+O-0411,-2209,muqtani@watf.example,naseem-cool.example,E-0411,,2589,delivered,exempt: service account
+O-0415,-415,muqtani@watf.example,warqa-clean.example,E-0415,,2583,delivered,exempt: service account
+O-0416,722,muqtani@watf.example,jazl-om-billing.example,E-0416,bookings_reconciliation.csv,182538,delivered,exempt: service account
+O-0417,832,muqtani@watf.example,nada-agri.example,E-0417,,2930,delivered,exempt: service account
+O-0418,837,muqtani@watf.example,warqa-clean.example,E-0418,,2935,delivered,exempt: service account
