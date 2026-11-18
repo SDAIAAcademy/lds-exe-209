@@ -84,10 +84,13 @@ const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls)
 function rel(t) {
   const sign = t < 0 ? 'قبل' : 'بعد';
   const m = Math.abs(t), d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mm = m % 60;
+  // Arabic counted nouns: one, two, three to ten, eleven and above
+  const count = (n, one, two, few, many) => n === 1 ? one : n === 2 ? two : n <= 10 ? n + ' ' + few : n + ' ' + many;
   const parts = [];
-  if (d) parts.push(d + ' يوم');
-  if (h) parts.push(h + ' ساعة');
-  if (mm || !parts.length) parts.push(mm + ' دقيقة');
+  if (d) parts.push(count(d, 'يوم', 'يومين', 'أيام', 'يومًا'));
+  if (h) parts.push(count(h, 'ساعة', 'ساعتين', 'ساعات', 'ساعة'));
+  if (mm) parts.push(count(mm, 'دقيقة', 'دقيقتين', 'دقائق', 'دقيقة'));
+  if (!parts.length) return 'في الساعة 0';
   return sign + ' ' + parts.join(' و') + ' من الساعة 0';
 }
 document.querySelectorAll('nav.tabs button').forEach((b) => b.addEventListener('click', () => {

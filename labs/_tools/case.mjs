@@ -240,17 +240,19 @@ export function muqtaniTrace(mail, config = 'incident') {
   }
   if (mail.kind === 'injected') {
     add('call', 'tool.search_records', 'search_records(table="bulky_waste_bookings", filter="last_90_days", fields="*")', 1);
+    if (guarded) {
+      // The proposed controls take the bookings table out of the agent's permissions, so the
+      // first tool call is refused; the domain allowlist would have stopped the send as well.
+      add('guard', 'policy.block', 'جدول طلبات جمع المخلفات الكبيرة خارج صلاحيات الوكيل بعد الضوابط: رُفض الاستعلام، فلا تصدير ولا إرسال', 1);
+      add('final', 'agent.done', 'أحيل إلى قائمة الاعتماد', 1);
+      return ev;
+    }
     add('result', 'tool.result', '1,284 سجلًا', 1);
     add('call', 'tool.export_records', 'export_records(format="csv", name="bookings_reconciliation.csv")', 1);
     add('result', 'tool.result', 'bookings_reconciliation.csv: 1,284 صفًّا، 9 حقول', 1);
-    if (guarded) {
-      add('guard', 'policy.block', 'جدول الطلبات خارج نطاق صلاحية الوكيل بعد الضوابط، والإرسال إلى نطاق غير معتمد يحتاج اعتمادًا بشريًا: لم يُرسل شيء', 2);
-      add('final', 'agent.done', 'أحيل إلى قائمة الاعتماد', 2);
-    } else {
-      add('call', 'tool.send_email', 'send_email(to="' + mail.from + '", attachments=["bookings_reconciliation.csv"])', 2);
-      add('result', 'tool.result', 'أُرسل', 2);
-      add('final', 'agent.done', 'رد: «أرفقنا الكشف المطلوب للمطابقة»', 2);
-    }
+    add('call', 'tool.send_email', 'send_email(to="' + mail.from + '", attachments=["bookings_reconciliation.csv"])', 2);
+    add('result', 'tool.result', 'أُرسل', 2);
+    add('final', 'agent.done', 'رد: «أرفقنا الكشف المطلوب للمطابقة»', 2);
     return ev;
   }
   return ev;
