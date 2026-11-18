@@ -1,0 +1,3 @@
+/* LDS-EXE-209: the simulation day has six sessions, so the projected agenda runs in two columns.
+   The reading view on a phone keeps the engine's single column. */
+html.ax-js:not(.ax-view-read) .deck > .slide .agenda { grid-template-columns: repeat(2, minmax(0, 1fr)); }
