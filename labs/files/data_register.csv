@@ -1,0 +1,26 @@
+﻿file,content,classification_in_case,may_enter_a_genai_tool
+case_brief.md,موجز الحالة,عام,نعم
+prework.md,العمل التحضيري الموجَّه,عام,نعم
+incident_procedure.md,نموذج إجراء الحوادث (إجراء الحالة),عام,نعم
+role_cards.md,بطاقات الأدوار,عام,نعم
+role_threshold_chart.csv,مخطط الأدوار والعتبات (يملؤه المشارك),عام,نعم
+contracts_extract.md,مقتطفات من عقدي أوسترالِس وجَزْل,مقيد,لا
+ai_inventory.csv,سجل أنظمة الذكاء الاصطناعي,مقيد,لا
+risk_register.csv,سجل المخاطر,مقيد,لا
+change_log.csv,سجل التغييرات,مقيد,لا
+review_queue.csv,سجل المراجعة الأسبوعية لردود «مُقتَني»,مقيد,لا
+muqtani_config.md,إعداد «مُقتَني» يوم الحادثة,مقيد,لا
+minhal_traces.jsonl,آثار «مِنهال» في موضوعات التنظيف والمخلفات المنزلية,مقيد,لا
+muqtani_inbox.json,بريد «مُقتَني» الوارد,مقيد,لا
+muqtani_traces.jsonl,آثار «مُقتَني»,مقيد,لا
+mail_gateway_log.csv,سجل بوابة البريد الصادر,مقيد,لا
+sandbox_outbox/bookings_reconciliation.csv,نسخة المرفق كما خرج (أرقام مقنَّعة في المقرر),مقيد,لا
+sandbox_outbox/supplier_contacts.csv,نسخة المرفق الأقدم كما خرج (أرقام مقنَّعة في المقرر),مقيد,لا
+retest_results.csv,نتائج إعادة الاختبار (مستجد المرحلة 4),مقيد,لا
+fact_sheet.csv,ورقة الحقائق (يملؤها الفريق، دون بيانات شخصية),عام,نعم
+decision_log.csv,سجل القرارات (يملؤه الفريق، دون بيانات شخصية),عام,نعم
+notification_table.csv,جدول الإشعارات (يملؤه الفريق),عام,نعم
+holding_statements.md,قالب البيانات المقتضبة,عام,نعم
+debrief_worksheet.md,ورقة جلسة استخلاص الدروس,عام,نعم
+memo_template.md,قالب مذكرة ما بعد الحادثة,عام,نعم
+assessment.md,التقييم وسلالمه,عام,نعم

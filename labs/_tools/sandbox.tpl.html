@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>البيئة المعزولة: آثار «مِنهال» و«مُقتَني»</title>
+<style>
+  :root { --ink: #1b2540; --paper: #f6f4ee; --line: #d9d5c8; --teal: #0f766e; --coral: #b42318; --muted: #5b6170; }
+  * { box-sizing: border-box; }
+  body { font-family: "IBM Plex Sans Arabic", system-ui, sans-serif; margin: 0; background: var(--paper); color: var(--ink); line-height: 1.75; font-size: 16px; }
+  header { background: var(--ink); color: #fff; padding: 14px 16px; }
+  header h1 { font-size: 21px; margin: 0; }
+  header p { margin: 2px 0 0; font-size: 14px; }
+  main { max-width: 980px; margin: 0 auto; padding: 12px 16px 60px; }
+  nav.tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  button, select, input { font: inherit; }
+  button { font-weight: 600; padding: 7px 14px; border: 1px solid #b9b4a4; border-radius: 8px; background: #fff; color: var(--ink); cursor: pointer; }
+  nav.tabs button[aria-selected="true"] { background: var(--teal); color: #fff; border-color: var(--teal); }
+  section.panel { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 10px 0; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 10px; }
+  .bar input[type=search] { flex: 1 1 220px; min-width: 0; padding: 6px 10px; border: 1px solid #b9b4a4; border-radius: 8px; }
+  .bar select { padding: 6px 8px; border: 1px solid #b9b4a4; border-radius: 8px; background: #fff; }
+  .count { font-size: 14px; color: var(--muted); }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin: 8px 0; background: #fbfaf6; overflow-wrap: anywhere; }
+  .card.sel { border-color: var(--teal); box-shadow: 0 0 0 2px #b7d9d5; }
+  .meta { font-size: 13.5px; color: var(--muted); }
+  .ev { border-inline-start: 4px solid var(--line); padding: 4px 10px; margin: 6px 0; background: #fff; }
+  .ev b { display: block; font-size: 13px; color: var(--muted); }
+  .ev.model { border-color: #6d28d9; } .ev.call { border-color: var(--teal); } .ev.result { border-color: #0e7490; }
+  .ev.guard { border-color: #b45309; } .ev.final { border-color: var(--ink); } .ev.user { border-color: #94a3b8; }
+  code, .ltr { direction: ltr; unicode-bidi: isolate; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: 13.5px; overflow-wrap: anywhere; }
+  .note { background: #eef6f5; border: 1px solid #b7d9d5; border-radius: 10px; padding: 8px 12px; font-size: 14.5px; margin: 8px 0; }
+  .warn { background: #fdf0ee; border-color: #f2c4bd; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <h1>البيئة المعزولة: آثار «مِنهال» و«مُقتَني»</h1>
+  <p>المختبر 1.1 من مقرر محاكاة حوادث الذكاء الاصطناعي لفرق القيادة. كل ما في الصفحة اصطناعي، ولا شيء يغادرها.</p>
+</header>
+<main>
+  <div class="note"><b>الوكيل والمساعد هنا ليسا نموذجين لغويين.</b> هما برنامج مكتوب السلوك يقوم مقام النموذج المستضاف، فترى القاعة كلها التشغيل نفسه. الأوقات بالنسبة إلى «الساعة 0»، ساعة انتشار المنشور.</div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="minhal">آثار «مِنهال»</button>
+    <button role="tab" aria-selected="false" data-tab="muqtani">بريد «مُقتَني» وإعادة التشغيل</button>
+    <button role="tab" aria-selected="false" data-tab="gateway">سجل بوابة البريد</button>
+  </nav>
+
+  <section class="panel" id="tab-minhal">
+    <h2>محادثات التنظيف والمخلفات المنزلية</h2>
+    <div class="bar">
+      <input type="search" id="m-q" placeholder="ابحث في السؤال والرد، أو بمعرّف الأثر">
+      <select id="m-model" aria-label="الإصدار"><option value="">كل الإصدارات</option></select>
+      <span class="count" id="m-count"></span>
+    </div>
+    <div id="m-list"></div>
+  </section>
+
+  <section class="panel" id="tab-muqtani" hidden>
+    <h2>البريد الوارد</h2>
+    <div class="bar">
+      <label>الإعداد: <select id="q-config"><option value="incident">كما كان يوم الحادثة</option><option value="controls">بعد الضوابط المقترحة (للنشاط الإضافي)</option></select></label>
+    </div>
+    <div id="q-list"></div>
+    <div id="q-view" hidden>
+      <h2 id="q-title"></h2>
+      <div class="card" id="q-mail"></div>
+      <div class="bar"><button id="q-step">الخطوة التالية</button><button id="q-all">كل الخطوات</button><span class="count" id="q-pos"></span></div>
+      <div id="q-trace"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="tab-gateway" hidden>
+    <h2>الرسائل الصادرة من حساب «مُقتَني»</h2>
+    <div id="g-list"></div>
+  </section>
+</main>
+<script>
+const DATA = /*DATA*/null;
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+function rel(t) {
+  const sign = t < 0 ? 'قبل' : 'بعد';
+  const m = Math.abs(t), d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mm = m % 60;
+  const parts = [];
+  if (d) parts.push(d + ' يوم');
+  if (h) parts.push(h + ' ساعة');
+  if (mm || !parts.length) parts.push(mm + ' دقيقة');
+  return sign + ' ' + parts.join(' و') + ' من الساعة 0';
+}
+document.querySelectorAll('nav.tabs button').forEach((b) => b.addEventListener('click', () => {
+  document.querySelectorAll('nav.tabs button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+  ['minhal', 'muqtani', 'gateway'].forEach((t) => { $('tab-' + t).hidden = t !== b.dataset.tab; });
+}));
+
+// ---- Minhal ----
+const models = [...new Set(DATA.minhal.map((x) => x.model))];
+models.forEach((m) => { const o = el('option', null, m); o.value = m; $('m-model').append(o); });
+function drawMinhal() {
+  const q = $('m-q').value.trim();
+  const mv = $('m-model').value;
+  const rows = DATA.minhal.filter((x) => (!mv || x.model === mv) && (!q || (x.trace_id + ' ' + x.question + ' ' + x.answer).includes(q)));
+  $('m-count').textContent = 'النتائج: ' + rows.length + ' من ' + DATA.minhal.length;
+  const list = $('m-list');
+  list.replaceChildren();
+  for (const x of rows.slice(0, 200)) {
+    const c = el('div', 'card');
+    c.append(el('div', 'meta', x.trace_id + ' · ' + rel(x.t_min) + ' · ' + x.channel + ' · ' + x.model + ' (' + x.alias + ')' + ' · تقييم السائل: ' + ({ up: 'إيجابي', down: 'سلبي', none: 'لا تقييم' }[x.feedback])));
+    c.append(el('p', null, 'السؤال: ' + x.question));
+    c.append(el('p', null, 'الرد: ' + x.answer));
+    for (const s of x.spans) {
+      const e = el('div', 'ev ' + (s.name === 'llm.generate' ? 'model' : s.name === 'safety_filter' ? 'guard' : 'result'));
+      e.append(el('b', null, s.name));
+      e.append(el('code', null, Object.entries(s).filter(([k]) => k !== 'name').map(([k, v]) => k + '=' + v).join('  ')));
+      c.append(e);
+    }
+    list.append(c);
+  }
+  if (rows.length > 200) list.append(el('p', 'count', 'تظهر أول 200 نتيجة: ضيّق البحث.'));
+}
+$('m-q').addEventListener('input', drawMinhal);
+$('m-model').addEventListener('change', drawMinhal);
+drawMinhal();
+
+// ---- Muqtani ----
+let current = null, shown = 0;
+function drawInbox() {
+  const list = $('q-list');
+  list.replaceChildren();
+  for (const m of DATA.mails) {
+    const c = el('div', 'card' + (current && current.id === m.id ? ' sel' : ''));
+    c.append(el('div', 'meta', m.id + ' · ' + rel(m.t_min)));
+    const p = el('p', null);
+    p.append(el('span', null, 'من: '), el('code', null, m.from));
+    c.append(p, el('div', null, m.subject));
+    const b = el('button', null, 'افتح وأعد التشغيل');
+    b.addEventListener('click', () => { current = m; shown = 0; drawInbox(); drawMail(); });
+    c.append(b);
+    list.append(c);
+  }
+}
+function events() { return DATA.traces[current.id][$('q-config').value]; }
+function drawMail() {
+  $('q-view').hidden = false;
+  $('q-title').textContent = current.id + ': ' + current.subject;
+  const box = $('q-mail');
+  box.replaceChildren();
+  box.append(el('div', 'meta', 'كما يعرضها برنامج البريد'));
+  const p = el('p', null); p.append(el('span', null, 'من: '), el('code', null, current.from)); box.append(p);
+  box.append(el('p', null, current.body));
+  if (current.hidden) box.append(el('p', 'meta', 'لا يظهر في برنامج البريد شيء آخر.'));
+  drawTrace();
+}
+function drawTrace() {
+  const ev = events();
+  const t = $('q-trace');
+  t.replaceChildren();
+  ev.slice(0, shown).forEach((e) => {
+    const d = el('div', 'ev ' + e.kind);
+    d.append(el('b', null, e.name + ' · ' + rel(e.t_min)));
+    d.append(el(e.kind === 'call' ? 'code' : 'span', null, e.text));
+    t.append(d);
+  });
+  if (shown >= ev.length && ev.some((e) => e.name === 'tool.send_email')) t.append(el('div', 'note warn', 'في البيئة المعزولة لا يغادر شيء: الرسالة وما أُرفق بها محفوظان في صندوق الإرسال المعزول (sandbox_outbox).'));
+  $('q-pos').textContent = 'الخطوة ' + Math.min(shown, ev.length) + ' من ' + ev.length;
+}
+$('q-step').addEventListener('click', () => { if (current) { shown = Math.min(shown + 1, events().length); drawTrace(); } });
+$('q-all').addEventListener('click', () => { if (current) { shown = events().length; drawTrace(); } });
+$('q-config').addEventListener('change', () => { if (current) { shown = 0; drawTrace(); } });
+drawInbox();
+
+// ---- gateway ----
+for (const g of DATA.gateway) {
+  const c = el('div', 'card');
+  c.append(el('div', 'meta', g.message_id + ' · ' + rel(g.t_min) + ' · رد على ' + g.in_reply_to));
+  const p = el('p', null); p.append(el('span', null, 'إلى النطاق: '), el('code', null, g.to_domain)); c.append(p);
+  c.append(el('p', null, 'المرفق: ' + (g.attachment || 'لا مرفق') + ' · الحجم: ' + g.bytes.toLocaleString('en-US') + ' بايت · الحالة: ' + g.status + ' · فحص DLP: ' + g.dlp));
+  $('g-list').append(c);
+}
+</script>
+</body>
+</html>
